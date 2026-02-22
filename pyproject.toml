@@ -1,0 +1,31 @@
+[build-system]
+requires = [
+    "setuptools==80.9.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docassemble.AkPowerOfAttorneyOverAMinorByParentOrGuardian"
+version = "0.1.0"
+description = "Alaska power of attorney over a minor by parent or guardian"
+readme = "README.md"
+authors = [
+    { name = "@plocket", email = "plocket@example.com" },
+]
+dependencies = [
+    "docassemble.ALAnyState @ git+https://github.com/SuffolkLITLab/docassemble-ALAnyState.git@main",
+    "docassemble.AssemblyLine>=4.3.0",
+    "docassemble.MassAccess @ git+https://github.com/SuffolkLITLab/docassemble-MassAccess.git@main",
+]
+license = "MIT"
+license-files = [
+    "LICENSE",
+]
+
+[project.urls]
+Homepage = "https://courtformsonline.org"
+
+[tool.setuptools.packages.find]
+where = [
+    ".",
+]

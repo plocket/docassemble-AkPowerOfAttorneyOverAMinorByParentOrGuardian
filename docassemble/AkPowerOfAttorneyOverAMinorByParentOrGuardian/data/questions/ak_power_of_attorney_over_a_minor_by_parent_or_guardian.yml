@@ -1,0 +1,523 @@
+comment: |
+  # TODOs
+
+  ## == SME-related ==
+
+  1. Does a notary cost money? How much? (Same in all states?)
+  1. Clarify term for decision-maker
+  1. Initially print 2 documents? (instead of copying the signed doc later)? May be easier.
+  1. Wording for abortion prohibited sections (shortened from form)
+  1. For LA: abortion, marriage, adoption, child-protection also disallowed?
+  1. Military duration - the one that comes later or sooner?
+  1. What areas of law cover this (for metadata)?
+  1. LA or TX form mentions legal ramifications for leaving children for long time. In AK too?
+  1. Is it required that the attorney-in-fact be 18 years old or older?
+  1. Can the mandates always be custom? So we don't need both versions of the text?
+  1. Can the user list their own additional mandates or are they just supposed to use the existing list and limit the items they choose?
+  1. Should birth certificates and such be copies or originals?
+  1. Must the contact info be a phone number?
+  1. Additional wording in doc: ONLY the following specific powers and responsibilities [SME: can we add this: regarding the care and custody of each minor child named above]. This delegation must not include the power or authority to consent to the marriage or adoption of the minor child, the performance or inducement of an abortion on or for the minor child, or the termination of parental rights to the minor child. [SME: can we add this: The specific powers and responsibilities are]:
+
+  ## == Technical ==
+
+  1. Mandates are not beinng listed in order despite omap.
+  1. DOCX not underlining underlined items. Just mac Pages app?
+  1. The table rows may be keeping their original size instead of adjusting to contents. Check. An issue with Pages?
+  1. The table lines are appearing at the top of the page.
+  1. Discuss: Use `children` obj or not? This will confuse other interviews for the user because, as a user, they may have children that are older or for whom they don't want to get parental delegation. Also, should it be `users[0].children`?
+
+  ## == General ==
+
+  1. Recommend stapler? How many people have staplers? I'm not sure I have staples.
+  1. Put all contact methods in doc, or just phone?
+  1. If not, use phone number as fallback for mobile?
+  1. Get all caregiver contact info too? Or at least offer both mobile and phone?
+  1. Ask about children 1 at a time? If as a group, how? Must have only minors, etc.
+  1. In final document, put each signature on its own page so the tables don't look strange? Or keep as is?
+  1. "Next Steps" doc - what should be in "Learn more"?
+  1. Should we include a translation of the final doc? There's extra info on there and they'll see what each field is supposed to contain.
+  1. Change terms and conditions? MA? What should be on that first page?
+  1. Just tell max time instead of having them pick an end time?
+  1. Military language - "look on your activation/deployment orders”.
+
+  ## === DAL (shared question lib, etc.) ===
+
+  1. Weaver didn't need to set allowed courts, but left the comment.
+  1. Add users[1+] contact methods question? Put in script above the individual `.phone_number` question with access via a continue button field called `x.get_contact_methods`?
+---
+include:
+  - docassemble.AssemblyLine:assembly_line.yml
+  - docassemble.ALAnyState:any_state.yml
+  - docassemble.MassAccess:massaccess.yml
+---
+metadata:
+  title: >-
+    Alaska power of attorney over a minor by parent or guardian
+  short title: >-
+    AK power of attorney
+  description: |-
+    This form helps a parent or guardian in Alaska let a family member or other person temporarily make important decisions for their children by making a document called "Alaska power of attorney over a minor by parent or guardian".
+  
+    For example, if you are a parent and need to leave the United States for a while, the person you choose can make decisions about your children's medical situations, schools, and other situations.
+  
+    You do not need to go to court to use this form, so it may be a good alternative to a guardianship or custody case.
+  
+    Leaving children with a non-parent for a long time can affect parental rights, so think about getting legal advice.
+  can_I_use_this_form: |
+    You might use this form if you are a parent in Alaska who needs someone else to make decisions for your children while you are away from home. For example, you might be leaving the US for a while.
+  before_you_start: |
+    **Before you start**:
+    
+    1. Make sure you can print 2 copies of the final document.
+    1. Decide how long you want the decision-maker to have permission to make the decisions. Unless you are in the US military it must be a year or less.
+    1. [Find a notary](https://courtformsonline.org/guides/finding-and-using-a-notary). Many times, someone can become a notary fairly easily. The notary must see you and the decision-maker sign the document and then they must stamp the document.
+    1. You will have to fill out some more of this form by hand when you meet with the notary.
+    1. Choose the person who will make decisions for your children. The person must be 18 years old or older.
+    1. Get that person's current address.
+    
+    When you are finished, you will need to:
+    
+    1. Sign both documents in front of the [notary](https://courtformsonline.org/guides/finding-and-using-a-notary).
+    1. Keep one signed copy for your records.
+    1. Give the decision-maker a signed copy of the document.
+
+    You may also want to:
+
+    1. Add the decision-maker as an emergency contact with the children's school, doctor, and childcare provider.
+    1. Give the decision maker important documents your children have, like birth certificates, insurance cards, and school or medical records.
+    
+    This authorization does not allow the new decision-maker to make decisions about abortion, your rights as a parent, or about the marriage or adoption of your children.
+    
+    You can cancel the agreement in writing at any time.
+    
+    You may also want to add the decision-maker as an emergency contact with the children's school, doctor, and childcare provider.
+  maturity: production
+  estimated_completion_minutes: 15
+  estimated_completion_delta: 5
+  LIST_topics: 
+    - "FA-00-00-00-00"
+    - "FA-04-00-00-00"
+    - "FA-14-00-00-00"
+    - "HO-00-00-00-00"
+  tags:
+    - "FA-00-00-00-00"
+    - "FA-04-00-00-00"
+    - "FA-14-00-00-00"
+    - "HO-00-00-00-00"
+  authors:
+    - "@plocket"
+  original_form:
+    - https://opa.doa.alaska.gov/minor-guardianship/
+  original_form_published_on: ""
+  allowed_courts: []
+  typical_role: "na"
+  al_weaver_version: "1.11.0"
+  generated_on: "2026-02-12"
+  languages:
+    - en
+  jurisdiction: NAM-US-US+AK
+  review_date: 2026-02-12
+  form_titles:
+    - Alaska power of attorney over a minor by parent or guardian
+  form_numbers:
+    - 
+  update_notes: |
+---
+code: |
+  # This controls the default country and list of states in address field questions
+  AL_DEFAULT_COUNTRY = "US"
+---
+code: |
+  # This controls the default state in address field questions
+  AL_DEFAULT_STATE = "AK"
+---
+code: |
+  github_repo_name =  'docassemble-AkPowerOfAttorneyOverAMinorByParentOrGuardian'
+---
+code: |
+  interview_short_title = "In Alaska, let a family member or friend temporarily make decisions for your children"
+---
+code: |
+  al_form_type = "other_form" 
+---
+objects:
+  - caregivers: ALPeopleList.using(ask_number=True,target_number=1)
+---
+objects:
+  - users: ALPeopleList.using(ask_number=True,target_number=1)
+---
+objects:
+  - parental_delegation_children: ALPeopleList.using(there_are_any=True)
+---
+sections:
+  - review_ak_power_of_attorney_over_a_minor_by_parent_or_guardian: Review your answers
+---
+#################### Interview order #####################
+comment: |
+  Controls order and branching logic for questions specific to this form
+id: interview_order_ak_power_of_attorney_over_a_minor_by_parent_or_guardian
+code: |
+  nav.set_section("review_ak_power_of_attorney_over_a_minor_by_parent_or_guardian")
+  user_role = "na"
+  user_ask_role = "na"
+  users.gather()
+  set_parts(subtitle=str(users))
+  set_progress(16)
+  # Discuss: Better to ask about the caregiver first, so we can kick out on age
+  # Not quite as motivation aware as asking about the children first
+  caregivers.gather()
+  caregivers[0].is_major
+  set_progress(32)
+  ## Alternative flow:
+  # if parental_delegation_children.target_number > 1:
+  #   parental_delegation_children.target_number = num_parental_delegation_children_multi_minors
+  parental_delegation_children.gather()
+  set_progress(48)
+  users[0].address.address
+  users[0].phone_number
+  set_progress(60)
+  caregivers[0].address.address
+  caregivers[0].phone_number
+  parental_delegation_mandates
+  set_progress(75)
+  users[0].is_in_US_military
+  set_progress(90)
+  interview_order_ak_power_of_attorney_over_a_minor_by_parent_or_guardian = True
+---
+###################### Main order ######################
+comment: |
+  This block includes the logic for standalone interviews.
+  Delete mandatory: True to include in another form
+mandatory: True
+code: |
+  al_intro_screen
+  ak_power_of_attorney_over_a_minor_by_parent_or_guardian_intro
+  interview_order_ak_power_of_attorney_over_a_minor_by_parent_or_guardian
+  signature_date
+  # Avoid storing data
+  ak_power_of_attorney_over_a_minor_by_parent_or_guardian_download
+---
+id: Alaska_power_of_attorney_over_a_minor_by_parent_or_guardian
+continue button field: ak_power_of_attorney_over_a_minor_by_parent_or_guardian_intro
+question: |
+  Alaska power of attorney over a minor by parent or guardian
+subquestion: |
+  This form helps a parent or guardian in Alaska let a family member or other person temporarily make important decisions for their children by making a document called "Alaska power of attorney over a minor by parent or guardian".
+
+  For example, if you are a parent and need to leave the United States, the person you choose can make decisions about your children's medical situations, schools, and other situations.
+
+  You do not need to go to court to use this form, so it may be a good alternative to a guardianship or custody case.
+
+  Leaving children with a non-parent for a long time can affect parental rights, so think about getting legal advice.
+
+  :clock: Most people take about 15 minutes to finish this form.[BR]
+  :lock: This tool will **not** save your information. If you close this page you may have to start this form all over again.
+  
+  **Before you start**:
+
+  1. Make sure you can print 2 copies of the final document.
+  1. Decide how long you want the decision-maker to have permission to make the decisions. Unless you are in the US military it must be a year or less.
+  1. [Find a notary](https://courtformsonline.org/guides/finding-and-using-a-notary). Many times, someone can become a notary fairly easily. The notary must see you and the decision-maker sign the document and then they must stamp the document.
+  1. You will have to fill out some more of this form by hand when you meet with the notary.
+  1. Choose the person who will make decisions for your children. The person must be 18 years old or older.
+  1. Get that person's current address.
+  
+  When you are finished, you will need to:
+  
+  1. Sign both documents in front of the [notary](https://courtformsonline.org/guides/finding-and-using-a-notary).
+  1. Keep one signed copy for your records.
+  1. Give the decision-maker a signed copy of the document.
+
+  You may also want to:
+
+  1. Add the decision-maker as an emergency contact with the children's school, doctor, and childcare provider.
+  1. Give the decision maker important documents your children have, like birth certificates, insurance cards, and school or medical records.
+  
+  This authorization does not allow the new decision-maker to make decisions about abortion, your rights as a parent, or about the marriage or adoption of your children.
+  
+  You can cancel the agreement in writing at any time.
+---
+id: names of people
+sets:
+  - caregivers[0].name.first
+  - caregivers[0].name.last
+  - caregivers[0].name.middle
+  - caregivers[0].name.suffix
+generic object: ALPeopleList
+question: |
+  Who do you want to make decisions for your children?
+subquestion: |
+  This person is called the "attorney-in-fact" on the final document.
+  
+  You will give this person permission to make decisions for your children. This person must be 18 years old or older.
+fields:
+  - code: |
+      caregivers[0].name_fields()
+---
+# Also, this is sort of a trick question. But people check a checkbox automatically. But we can't change that and it's very jarring to be asked a trick question.
+id: Caregiver age
+question: |
+  ${ caregivers[0].name.full() }'s age
+subquestion: |
+  The person making decisions for your children must be at least 18 years old.
+fields:
+  - "Is ${ caregivers[0].name.full() } 18 years old or older": caregivers[0].is_major
+    datatype: yesnoradio
+validation code: |
+  if not caregivers[0].is_major:
+    validation_error("The person who makes decisions for your children must be 18 years old or older. You need to go back and choose someone else.", field="caregivers[0].is_major")
+---
+# id: num children
+# question: |
+#   The children
+# subquestion: |
+#   These must be children that you are either a parent of or a guardian of.
+# fields:
+#   - How many children do you have who are under 18 years old?: parental_delegation_children.target_number
+#     datatype: integer
+#     min: 1
+#   - "How many of those children do you want ${ caregivers[0].name.full() } to make decisions for?": num_parental_delegation_children_multi_minors
+#     datatype: integer
+#     min: 1
+#     js show if:
+#       parseInt(val("parental_delegation_children.target_number")) > 1
+---
+id: children completion
+code: |
+  parental_delegation_children[i].name.first
+  parental_delegation_children[i].birthdate
+  parental_delegation_children[i].complete = True
+---
+id: children
+sets:
+  - parental_delegation_children[i].name.first
+  - parental_delegation_children[i].name.last
+  - parental_delegation_children[i].name.middle
+  - parental_delegation_children[i].name.suffix
+question: |
+  % if i == 0:
+  Information about the child you want ${ caregivers[0].name.full() } to make decisions for
+  % else:
+  Information about the ${ ordinal(i) } child you want ${ caregivers[0].name.full() } to make decisions for
+  % endif
+subquestion: |
+  % if i > 0:
+  You have already told us about **${ comma_and_list( parental_delegation_children.complete_elements() ) }**.
+  % endif
+fields:
+  - code: |
+      parental_delegation_children[i].name_fields()
+  - Are you a parent or guardian of this child?: parental_delegation_children[i].user_is_parentish
+    datatype: yesnoradio
+  - The child's date of birth: parental_delegation_children[i].birthdate
+    datatype: BirthDate
+    alMin: ${ as_datetime( today().minus( years=18 ).plus( days=1 )) }
+    alMinMessage: 'To put a child on this form, the child must be less than 18 years old. This child is 18 years old or older.'
+validation code: |
+  if not parental_delegation_children[i].user_is_parentish:
+    validation_error('If you are not the parent or guardian of the child you cannot put the child on this form.', field='parental_delegation_children[i].user_is_parentish')
+---
+id: there is another child
+question: |
+  Do you want to add another child to the document?
+subquestion: |
+  This child must be younger than 18 years old. You must be the child's parent or guardian.
+yesno: parental_delegation_children.there_is_another
+---
+id: mandates
+question: |
+  What decisions do you want ${ caregivers[0].name.full() } to make for ${ 'your children' if parental_delegation_children.number_gathered() > 1 else parental_delegation_children[0].name.first }?
+subquestion: |
+  You can choose what decisions [more]. There are some decisions ${ caregivers[0].name.full() } CANNOT make for ${ 'your children' if parental_delegation_children.number_gathered() > 1 else parental_delegation_children[0].name.first }. They are these ones:
+  
+  - They cannot make decisions about marriage or adoption.
+  - They cannot make decisions about abortion.
+  - They cannot take away your rights as a parent of ${ 'your children' if parental_delegation_children.number_gathered() > 1 else parental_delegation_children[0].name.first }.
+  
+  You have the right to cancel these permissions at any time.
+fields:
+  - "Which of these do you want ${ caregivers[0].name.full() } to decide for ${ 'your children' if parental_delegation_children.number_gathered() > 1 else parental_delegation_children[0].name.first }?": parental_delegation_mandates
+    datatype: checkboxes
+    none of the above: False
+    choices:
+      code: |
+        parental_delegation_mandates_map
+  - "What other decisions do you want ${ caregivers[0].name.full() } to make for ${ 'your children' if parental_delegation_children.number_gathered() > 1 else parental_delegation_children[0].name.first }?": custom_mandates
+    input type: area
+    show if: parental_delegation_mandates['other']
+---
+# ==========
+# WARNING: If you change the number of items in parental_delegation_mandates_map you also may need to change the docx check for which mandates paragraph to show.
+# ==========
+id: madates values
+variable name: parental_delegation_mandates_map
+data: !!omap
+  - education_enroll: "Enroll ${ comma_and_list( parental_delegation_children ) } in school."
+  - education_records: "See and get copies of school records and other records."
+  - education_activities: "Let ${ comma_and_list( parental_delegation_children ) } go to school activities and other functions."
+  - general: "Choose to give or withhold any consent or waiver for school activities, medical treatment, dental treatment, and other activity, function, or treatment that may concern ${ comma_and_list( parental_delegation_children, and_string='or') }."
+  - other: "Other decisions"
+---
+id: Your military status
+question: |
+  Your military status
+fields:
+  - "Are you in the US military?": users[0].is_in_US_military
+    datatype: yesnoradio
+---
+id: add children
+event: add_children
+question: |
+  Your children
+review:
+  - Edit: parental_delegation_children.revisit
+    button: |
+      ${ revisit_delegation_children }
+---
+id: ak power of attorney over a minor by parent or guardian review screen
+event: review_ak_power_of_attorney_over_a_minor_by_parent_or_guardian
+question: |
+  Review your answers
+review:
+  - Edit: users.revisit
+    button: |
+      ### Your information
+
+      **Name**: ${ users[0].name.full() }[BR]
+      **Address**:[BR]
+      ${ users[0].address.block() }[BR]
+      **Contact information**:[BR]
+      ${ showifdef( 'users[0].mobile_number' ) or showifdef( 'user[0].phone_number' ) or 'None' }
+  - Edit: users[0].is_in_US_military
+    button: |
+      **Military status**:
+      % if users[0].is_in_US_military:
+      You are a member of the US military
+      % else:
+      You are **not** in the US military
+      % endif
+  - Edit: caregivers[0].name.first
+    button: |
+      ### Decision-maker
+
+      **Name**: ${ caregivers[0].name.full() }[BR]
+      **Age**: 18 years old or older[BR]
+      **Address**:[BR]
+      ${ caregivers[0].address.block() }[BR]
+      **Contact information**:[BR]
+      ${ showifdef( 'caregivers[0].mobile_number' ) or showifdef( 'caregivers[0].phone_number' ) or 'None' }
+  - Edit: parental_delegation_children.revisit
+    button: |
+      **${ caregivers[0].name.full() } can make decisions for these children**
+
+      % for child in parental_delegation_children:
+      * ${ child.name.full() }, born ${ child.birthdate }
+      % endfor
+  - Edit: parental_delegation_mandates
+    button: |
+      **You want ${ caregivers[0].name.full() } to decide these for ${ 'your children' if parental_delegation_children.number_gathered() > 1 else parental_delegation_children[0].name.first }?**:
+      % for mandate in parental_delegation_mandates.true_values:
+      * ${ mandate }
+      % endfor
+      % if parental_delegation_mandates['other']:
+      * ${ custom_mandates }
+      % endif
+---
+continue button field: parental_delegation_children.revisit
+question: |
+  Your children
+subquestion: |
+  ${ revisit_delegation_children }
+---
+template: revisit_delegation_children
+content: |
+  Add the children that you want ${ caregivers[0].name.full() } to make decisions for. You must be their parent or guardian.
+  
+  ${ parental_delegation_children.table }
+  
+  ${ parental_delegation_children.add_action(label="Add a child") }
+---
+table: parental_delegation_children.table
+rows: parental_delegation_children
+columns:
+  - Name: |
+      row_item.name_full() if defined("row_item.name.first") else ""
+  - Birthdate: |
+      row_item.birthdate if defined("row_item.birthdate") else ""
+edit:
+  - name.first
+  - birthdate
+confirm: True
+---
+id: download ak_power_of_attorney_over_a_minor_by_parent_or_guardian
+event: ak_power_of_attorney_over_a_minor_by_parent_or_guardian_download
+question: |
+  All done! :face-smile:
+subquestion: |
+  Thank you, ${ comma_and_list( users ) }. Your document is ready to download at the bottom of the page. Here is what you need to do next.
+
+  **Before you print the form:**
+  
+  1. :eye: [Look at the document at the bottom of the page](#documents) to make sure it is correct.
+  1. :pencil: Tap the "Edit answers" button to fix any mistakes.
+
+  **Next steps:**
+  
+  1. :print: :print: Print 2 copies of the document.
+  1. :user-tie: Go to the [notary certified by Alaska](https://courtformsonline.org/guides/finding-and-using-a-notary).
+  1. :pen: Write the dates when you want ${ caregivers[0].name.full() } to start making decisions and when you want them to stop. ${ "That time period can be up to 1 year or, if you need, it can be up to 30 days after your military duty ends" if users[0].is_in_US_military else "You can give them permission for up to a year" }.
+  1. :eye: Make sure you have filled out all the blank lines in the form.
+  1. :signature: You and ${ caregivers[0].name.full() } should both sign both documents in front of the Alaska notary.
+  1. :signature: Have the notary notarize and sign both documents.
+  1. :file-lines: Give one signed document to ${ caregivers[0].name.full() }.
+  1. :folder: Keep the other document for your records.
+
+  After that, ${ caregivers[0].name.full() } can show this document to prove they have permission to make decisions for ${ comma_and_list( parental_delegation_children ) }.
+
+  You may also want to:
+  
+  :phone: Add ${ caregivers[0].name.full() } as an emergency contact with the schools, doctors, and childcare provider.[BR]
+  :file-lines: Give ${ caregivers[0].name.full() } important documents, like birth certificates, insurance cards, and school or medical records.
+
+  ---
+
+  <div id="documents" style="display: hidden" aria-hidden="true"></div>
+  
+  ${ al_user_bundle.download_list_html() }
+
+  <p style="text-align: right;">
+  ${ action_button_html(url_action('review_ak_power_of_attorney_over_a_minor_by_parent_or_guardian'), label=':pencil: Edit answers', color='info', size="md") }
+  </p>
+
+  ${ al_user_bundle.send_button_html(show_editable_checkbox=True) }
+
+progress: 100
+---
+# ALDocument objects specify the metadata for each template
+objects:
+  - ak_power_of_attorney_over_a_minor_by_parent_or_guardian_next_steps: ALDocument.using(title="Next steps", filename="ak_power_of_attorney_over_a_minor_by_parent_or_guardian_next_steps.docx", enabled=True, has_addendum=False)
+  - ak_power_of_attorney_over_a_minor_by_parent_or_guardian_attachment: ALDocument.using(title="Alaska power of attorney over a minor by parent or guardian", filename="ak_power_of_attorney_over_a_minor_by_parent_or_guardian", enabled=True, has_addendum=False, )
+---
+# Bundles group the ALDocuments into separate downloads, such as the attorney-in-fact and for the user
+objects:
+  - al_user_bundle: ALDocumentBundle.using(elements=[ak_power_of_attorney_over_a_minor_by_parent_or_guardian_next_steps, ak_power_of_attorney_over_a_minor_by_parent_or_guardian_attachment], filename="ak_power_of_attorney_over_a_minor_by_parent_or_guardian", title="All forms to download for your records", enabled=True)
+  - al_recipient_bundle: ALDocumentBundle.using(elements=[ak_power_of_attorney_over_a_minor_by_parent_or_guardian_attachment],  filename="ak_power_of_attorney_over_a_minor_by_parent_or_guardian", title="All forms to file", enabled=True)
+---
+# Each attachment defines a key in an ALDocument that identifies its template.
+# There are no signatures for this form, so the key is always "final"
+attachment:
+  name: Post-form-Instructions
+  filename: ak_power_of_attorney_over_a_minor_by_parent_or_guardian_next_steps
+  docx template file: ak_power_of_attorney_over_a_minor_by_parent_or_guardian_next_steps.docx
+  variable name: ak_power_of_attorney_over_a_minor_by_parent_or_guardian_next_steps[i]
+  skip undefined: True
+  tagged pdf: True
+---
+attachment:
+  name: ak power of attorney over a minor by parent or guardian
+  filename: ak_power_of_attorney_over_a_minor_by_parent_or_guardian
+  variable name: ak_power_of_attorney_over_a_minor_by_parent_or_guardian_attachment[i]
+  skip undefined: True
+  docx template file: ak_power_of_attorney_over_a_minor_by_parent_or_guardian.docx
+  tagged pdf: True
+---
