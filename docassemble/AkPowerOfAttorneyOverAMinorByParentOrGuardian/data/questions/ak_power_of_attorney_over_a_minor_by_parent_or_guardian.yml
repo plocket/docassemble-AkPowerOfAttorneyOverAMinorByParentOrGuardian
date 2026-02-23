@@ -107,8 +107,10 @@ metadata:
   authors:
     - "@plocket"
   original_form:
-    - https://opa.doa.alaska.gov/minor-guardianship/
+    - https://opa.doa.alaska.gov/media/dasedrhk/delegation.pdf
   original_form_published_on: ""
+  help_page_url: https://opa.doa.alaska.gov/minor-guardianship/
+  help_page_title: Minor (Child) Guardianship
   allowed_courts: []
   typical_role: "na"
   al_weaver_version: "1.11.0"
