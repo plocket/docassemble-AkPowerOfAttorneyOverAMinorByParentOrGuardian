@@ -213,8 +213,8 @@ code: |
   parental_delegation_mandates
   set_progress(75)
   users[0].is_in_US_military
+  set_progress(85)
   parental_delegation_dates
-  caregivers.table
   set_progress(90)
   interview_order_ak_power_of_attorney_over_a_minor_by_parent_or_guardian = True
 ---
@@ -404,7 +404,8 @@ fields:
     datatype: radio
     choices:
       - I will still use a notary public or someone with the power to take oaths: False
-      - I will use the Self-Certification form: True
+      # Disable/hide others here?
+      - I will use the Self-Certification form instead: True
     required: False
 ---
 # id: num children
@@ -693,7 +694,7 @@ review:
       **Address**:[BR]${ users[0].address.block() }
   - Edit: users[0].phone_number
     button: |
-      **Phone number**: ${ users[0].mobile_number or users[0].phone_number }
+      **Phone number**: ${ showifdef('users[0].mobile_number') or showifdef('users[0].phone_number') }
   # - Edit: users.revisit
   #   button: |
   #     ### Your information
@@ -775,7 +776,7 @@ review:
       **Address**:[BR]${ caregivers[0].address.block() }
   - Edit: caregivers[0].phone_number
     button: |
-      **Phone number**: ${ caregivers[0].mobile_number or users[0].phone_number }
+      **Phone number**: ${ showifdef('caregivers[0].mobile_number') or showifdef('caregivers[0].phone_number') }
   # - Edit: caregivers[0].revisit
   #   button: |
   #     ### Decision-maker
@@ -829,9 +830,11 @@ review:
       % else:
       **Start date**: You skipped choosing a start date.[BR]
       % endif
-      % if users[0].is_in_US_military and not decide_delegation_dates_later and users[0].deployment_end:
-      % if users[0].deployment_end:
+      % if not decide_delegation_dates_later and users[0].is_in_US_military and users[0].has_deployment_order and users[0].deployment_end:
+      % if users[0].has_deployment_order and users[0].deployment_end:
       **Deployment orders end date**: ${ users[0].deployment_end }[BR]
+      % elif not users[0].has_deployment_order:
+      **Deployment orders:** You were unable to look at your deployment orders.
       % else:
       **Deployment orders end date**: You skipped setting the end date that is on your deployment orders.[BR]
       % endif
