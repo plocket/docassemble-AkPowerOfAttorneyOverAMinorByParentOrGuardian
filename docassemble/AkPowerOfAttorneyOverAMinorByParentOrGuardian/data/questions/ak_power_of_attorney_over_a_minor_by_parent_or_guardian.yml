@@ -304,9 +304,9 @@ question: |
   Next steps for certification
 subquestion: |
   % if users[0].needs_TF_835:
-  You plan to certify your documents with someone with the power to take oaths, like a notary.
-  % else:
   You plan to certify your documents with the Self-Certification (No Notary Available) TF-835 form.
+  % else:
+  You plan to certify your documents with someone with the power to take oaths, like a notary.
   % endif
   You can make a note here about what your next steps will be and we will put it on your reminder document. You can skip this.
 fields:
